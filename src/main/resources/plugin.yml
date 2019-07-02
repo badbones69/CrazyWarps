@@ -1,6 +1,6 @@
 name: CrazyWarps
 version: ${project.version}
-main: me.ryder.CrazyWarps.CrazyWarps
+main: me.ryder.crazywarps.CrazyWarps
 api-version: 1.13
 authors: [Ryder]
 description: A plugin that categorizes warps.
