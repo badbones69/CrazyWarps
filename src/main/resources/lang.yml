@@ -1,0 +1,10 @@
+messages:
+  config-reload: '&cYou have reloaded the config.yml.'
+  no-perms: '&cYou do not have permissions to use this command.'
+  no-category-perms: '&cYou do not have permission to see these warps.'
+  warp-message: '&cYou are teleporting to &e%warp% &cin &e%delay% &cseconds.'
+  warp-cancel: '&cTeleportation was interrupted because you took damage or moved.'
+  warp-list: '&cThis lists all warps and categories.'
+  warp-list-format: '%category% &7[%warp%&7]'
+  category-lore-deny: '&c&lLOCKED'
+  category-lore-allow: '&a&lUNLOCKED'
