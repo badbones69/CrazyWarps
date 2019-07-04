@@ -1,5 +1,6 @@
 package me.ryder.crazywarps;
 
+import me.ryder.crazywarps.cmds.CmdCw;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
@@ -28,7 +29,7 @@ public final class CrazyWarps extends JavaPlugin {
 
     }
     private void Commands() {
-
+        this.getCommand("cw").setExecutor(new CmdCw());
     }
     @Override
     public void onDisable() {
