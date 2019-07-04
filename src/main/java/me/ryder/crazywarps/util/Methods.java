@@ -3,7 +3,7 @@ package me.ryder.crazywarps.util;
 import org.bukkit.ChatColor;
 
 public class Methods {
-    public String C(String M) {
+    public static String pl(String M) {
         return ChatColor.translateAlternateColorCodes('&', M);
     }
 }

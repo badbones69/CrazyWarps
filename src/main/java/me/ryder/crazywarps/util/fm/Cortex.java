@@ -10,6 +10,13 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 
 public class Cortex extends JavaPlugin {
+
+    private static Cortex instance = new Cortex();
+
+    public static Cortex getInstance() {
+        return instance;
+    }
+
     Plugin p;
 
     FileConfiguration c;
@@ -68,7 +75,6 @@ public class Cortex extends JavaPlugin {
     public FileConfiguration getData() {
         return d;
     }
-    
     public FileConfiguration getLang() {
         return l;
     }
