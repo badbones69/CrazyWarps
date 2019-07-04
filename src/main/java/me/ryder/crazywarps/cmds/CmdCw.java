@@ -18,7 +18,7 @@ public class CmdCw extends JavaPlugin implements CommandExecutor {
 
             if (!commandLabel.equalsIgnoreCase("cw")) {
                 if (!sender.hasPermission("cw.access")) {
-                    sender.sendMessage(Methods.pl("&cYou do not have enough permissions."));
+                    sender.sendMessage(Methods.pl(msg.getString("settings.prefix" + "&cYou do not nave enough permissions.")));
                     return true;
                 }
                 else {
