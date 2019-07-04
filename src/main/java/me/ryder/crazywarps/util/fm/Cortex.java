@@ -68,6 +68,10 @@ public class Cortex extends JavaPlugin {
     public FileConfiguration getData() {
         return d;
     }
+    
+    public FileConfiguration getLang() {
+        return l;
+    }
 
     public static void copyFile(InputStream in, File out) throws Exception {
         InputStream fis = in;
