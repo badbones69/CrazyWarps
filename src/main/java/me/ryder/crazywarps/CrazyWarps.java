@@ -7,16 +7,14 @@ import java.util.logging.Logger;
 public final class CrazyWarps extends JavaPlugin {
 
     private static Logger m;
-
+    
+    @SuppressWarnings("deprecation")
     @Override
     public void onEnable() {
         m = getLogger();
 
         m.info("=== CrazyWarps Start ===");
         m.info("CrazyWarps" + getDescription().getVersion() + " - By Ryder Belserion");
-
-        m.info("Loading Files...");
-        Files();
 
         m.info("Loading Commands...");
         Commands();
@@ -32,10 +30,8 @@ public final class CrazyWarps extends JavaPlugin {
     private void Commands() {
 
     }
-    private void Files() {
-
-    }
     @Override
     public void onDisable() {
+        m.info("=== CrazyWarps Stop");
     }
 }
