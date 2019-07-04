@@ -32,6 +32,6 @@ public final class CrazyWarps extends JavaPlugin {
     }
     @Override
     public void onDisable() {
-        m.info("=== CrazyWarps Stop");
+        m.info("=== CrazyWarps Stop ===");
     }
 }
