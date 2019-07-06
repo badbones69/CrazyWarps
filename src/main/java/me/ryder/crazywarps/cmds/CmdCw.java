@@ -33,7 +33,7 @@ public class CmdCw extends JavaPlugin implements CommandExecutor {
                     p.sendMessage(Methods.pl("&8- &c/cw delwarp <warp name> &7This will delete a warp."));
                     p.sendMessage(Methods.pl("&8- &c/cw setwarp <warp name> &7This will set a warp."));
                     p.sendMessage(Methods.pl("&8- &c/cw warplist &7This will list all warps and categories."));
-                    p.sendMessage(Methods.pl("&8- &cc/cw warpsync &7This will sync Essentials & CMI warps into CrazyWarps."));
+                    p.sendMessage(Methods.pl("&8- &c/cw warpsync &7This will sync Essentials & CMI warps into CrazyWarps."));
                 }
             }
      return true;
