@@ -46,7 +46,7 @@ public final class CrazyWarps extends JavaPlugin {
     public void onDisable() {
         m.info("-------------------------------");
         m.info("");
-        m.info("Crrazy Warps " + getDescription().getVersion() + " shutting down.");
+        m.info("Crazy Warps " + getDescription().getVersion() + " shutting down.");
         m.info("");
         m.info("-------------------------------");
     }
