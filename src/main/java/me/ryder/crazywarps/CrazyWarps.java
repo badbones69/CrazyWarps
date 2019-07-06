@@ -7,12 +7,7 @@ import java.util.logging.Logger;
 
 public final class CrazyWarps extends JavaPlugin {
 
-    private static CrazyWarps instance;
     private Logger m;
-
-    public static CrazyWarps getInstance() {
-        return instance;
-    }
 
     @SuppressWarnings("deprecation")
     @Override
