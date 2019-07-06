@@ -1,7 +1,7 @@
 package me.ryder.crazywarps.cmds;
 
 import me.ryder.crazywarps.util.Methods;
-import me.ryder.crazywarps.util.fm.Cortex;
+import me.ryder.crazywarps.util.fm.SettingsManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class CmdCw extends JavaPlugin implements CommandExecutor {
 
-    public static Cortex settings = Cortex.getInstance();
+    public static SettingsManager settings = SettingsManager.getInstance();
 
     public boolean onCommand(CommandSender p, Command cmd, String commandLabel, String[] args) {
             FileConfiguration config = settings.getConfig();
