@@ -32,7 +32,7 @@ public final class CrazyWarps extends JavaPlugin {
 
     }
     private void Commands() {
-        this.getCommand("cw").setExecutor(new CmdCw());
+       // this.getCommand("cw").setExecutor(new CmdCw()); => It breaks code.
     }
     @Override
     public void onDisable() {
