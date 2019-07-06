@@ -18,7 +18,7 @@ public class CmdCw extends JavaPlugin implements CommandExecutor {
             FileConfiguration msg = settings.getLang();
 
             if (!(p instanceof Player)) {
-                p.sendMessage(Methods.pl("&cYou can only use  that command in-game."));
+                p.sendMessage(Methods.pl("&cYou can only use that command in-game."));
                 return true;
             }
 
