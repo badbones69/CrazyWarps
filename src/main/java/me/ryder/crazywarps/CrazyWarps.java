@@ -1,6 +1,7 @@
 package me.ryder.crazywarps;
 
 import me.ryder.crazywarps.cmds.CmdCw;
+import me.ryder.crazywarps.util.Methods;
 import me.ryder.crazywarps.util.fm.SettingsManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,28 +23,30 @@ public final class CrazyWarps extends JavaPlugin {
 
         m.info("-------------------------------");
         m.info("");
-        m.info("CrazyWarps" + getDescription().getVersion() + " - By Ryder Belserion");
+        m.info("Crazy Warps " + getDescription().getVersion() + " - By Ryder Belserion");
         m.info("");
-        m.info("-------------------------------");
-
-        // m.info("Loading Files...");
-
-
-        m.info("Loading Commands...");
+        m.info("Activating Commands...");
         this.Commands();
 
-        m.info("Loading Events...");
+        m.info("");
+        m.info("Activating Events...");
+        this.Events();
+
+        m.info("");
+        m.info("-------------------------------");
     }
 
-    public void Commands() {
-        // getCommand("cw").setExecutor(new CmdCw());
-        getCommand("cw").setExecutor(new CmdCw());
+    private void Commands() {
+
+    }
+    private void Events() {
+
     }
     @Override
     public void onDisable() {
         m.info("-------------------------------");
         m.info("");
-        m.info("CrazyWarps" + getDescription().getVersion() + "shutting down.");
+        m.info("Crazy Warps " + getDescription().getVersion() + " shutting down.");
         m.info("");
         m.info("-------------------------------");
     }
