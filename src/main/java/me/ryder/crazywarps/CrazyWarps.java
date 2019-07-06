@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public final class CrazyWarps extends JavaPlugin {
 
-    private static Logger m;
+    private Logger m;
 
     @SuppressWarnings("deprecation")
     @Override
