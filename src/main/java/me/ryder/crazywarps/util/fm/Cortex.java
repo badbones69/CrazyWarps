@@ -3,13 +3,18 @@ package me.ryder.crazywarps.util.fm;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-public class Cortex extends JavaPlugin {
+public class Cortex {
+
+    private static Cortex instance = new Cortex();
+
+    public static Cortex getInstance() {
+        return instance;
+    }
 
     Plugin p;
 
