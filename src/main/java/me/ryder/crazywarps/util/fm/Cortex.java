@@ -10,12 +10,6 @@ import java.io.InputStream;
 
 public class Cortex {
 
-    private static Cortex instance = new Cortex();
-
-    public static Cortex getInstance() {
-        return instance;
-    }
-
     Plugin p;
 
     FileConfiguration c;

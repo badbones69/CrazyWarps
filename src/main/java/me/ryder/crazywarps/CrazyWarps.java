@@ -15,27 +15,29 @@ public final class CrazyWarps extends JavaPlugin {
 
         m = getLogger();
 
-        m.info("=== CrazyWarps Start ===");
+        m.info("-------------------------------");
+        m.info("");
         m.info("CrazyWarps" + getDescription().getVersion() + " - By Ryder Belserion");
+        m.info("");
+        m.info("-------------------------------");
 
         // m.info("Loading Files...");
 
         m.info("Loading Commands...");
-        Commands();
+        this.Commands();
 
         m.info("Loading Events...");
-        Events();
-
-        m.info("=== CrazyWarps has successfully started up ===");
     }
-    private void Events() {
 
-    }
     private void Commands() {
-       // this.getCommand("cw").setExecutor(new CmdCw()); => It breaks code.
+        // getCommand("cw").setExecutor(new CmdCw());
     }
     @Override
     public void onDisable() {
-        m.info("=== CrazyWarps Stop ===");
+        m.info("-------------------------------");
+        m.info("");
+        m.info("CrazyWarps" + getDescription().getVersion() + "shutting down.");
+        m.info("");
+        m.info("-------------------------------");
     }
 }
