@@ -13,7 +13,7 @@ public class CmdCw extends JavaPlugin implements CommandExecutor {
 
     public static SettingsManager settings = SettingsManager.getInstance();
 
-    public boolean onCommand(CommandSender p, Command cmd, String commandLabel, String[] args) {
+    public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
             FileConfiguration config = settings.getConfig();
             FileConfiguration msg = settings.getLang();
 
@@ -22,7 +22,7 @@ public class CmdCw extends JavaPlugin implements CommandExecutor {
                 return true;
             }
 
-            if (!commandLabel.equalsIgnoreCase("cw")) {
+            if (label.equalsIgnoreCase("cw")) {
                 if (!p.hasPermission("cw.access")) {
                     p.sendMessage(Methods.pl(config.getString("settings.prefix" + "&cYou do not nave enough permissions.")));
                     return true;
