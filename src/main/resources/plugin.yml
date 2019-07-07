@@ -8,3 +8,6 @@ commands:
   cw:
     description: opens up a list of commands
     usage: /cw
+  cw reload:
+    description: reloads the plugin
+    usage: /cw reload
