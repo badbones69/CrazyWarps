@@ -13,19 +13,18 @@ public class CmdCwReload extends JavaPlugin implements CommandExecutor {
     public static SettingsManager settings = SettingsManager.getInstance();
 
     public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
-        FileConfiguration config = settings.getConfig();
         FileConfiguration msg = settings.getLang();
 
         if (label.equalsIgnoreCase("cw reload")) {
             if (!p.hasPermission("cw.access")) {
-                p.sendMessage(Methods.pl(config.getString("settings.prefix" + "&cYou do not have enough permissions")));
+                p.sendMessage(Methods.pl(msg.getString("messages.prefix" + "messages.no-perms")));
                 return true;
             }
 
             else {
                 settings.reloadConfig();
 
-                p.sendMessage(Methods.pl(config.getString("settings.prefix" + "&cYou have reloaded the config.yml.")));
+                p.sendMessage(Methods.pl(msg.getString("messages.prefix" + "messages.config-reload")));
             }
         }
 
