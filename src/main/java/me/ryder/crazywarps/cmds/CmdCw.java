@@ -17,17 +17,17 @@ public class CmdCw extends JavaPlugin implements CommandExecutor {
             FileConfiguration msg = settings.getLang();
 
             if (!(p instanceof Player)) {
-                p.sendMessage(Methods.pl(msg.getString("messages.prefix" + "&cYou can only use that command in-game.")));
+                p.sendMessage(Methods.pl(msg.getString("messages.prefix" + " &cYou can only use that command in-game.")));
                 return true;
             }
 
             if (label.equalsIgnoreCase("cw")) {
                 if (!p.hasPermission("cw.list")) {
-                    p.sendMessage(Methods.pl(msg.getString("messages.prefix" + "messages.no-perms")));
+                    p.sendMessage(Methods.pl(msg.getString("messages.prefix" + " messages.no-perms")));
                     return true;
                 }
                 else {
-                    p.sendMessage(Methods.pl(msg.getString("messages.prefix" + "&cThis shows a list of all available commands.")));
+                    p.sendMessage(Methods.pl(msg.getString("messages.prefix" + " &cThis shows a list of all available commands.")));
                     p.sendMessage(Methods.pl("&8- &c/cw reload &7This will reload the plugin."));
                     p.sendMessage(Methods.pl("&8- &c/cw delwarp <warp name> &7This will delete a warp."));
                     p.sendMessage(Methods.pl("&8- &c/cw setwarp <warp name> &7This will set a warp."));

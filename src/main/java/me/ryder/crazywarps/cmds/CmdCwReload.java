@@ -17,14 +17,14 @@ public class CmdCwReload extends JavaPlugin implements CommandExecutor {
 
         if (label.equalsIgnoreCase("cw reload")) {
             if (!p.hasPermission("cw.access")) {
-                p.sendMessage(Methods.pl(msg.getString("messages.prefix" + "messages.no-perms")));
+                p.sendMessage(Methods.pl(msg.getString("messages.prefix" + " messages.no-perms")));
                 return true;
             }
 
             else {
                 settings.reloadConfig();
 
-                p.sendMessage(Methods.pl(msg.getString("messages.prefix" + "messages.config-reload")));
+                p.sendMessage(Methods.pl(msg.getString("messages.prefix" + " messages.config-reload")));
             }
         }
 
