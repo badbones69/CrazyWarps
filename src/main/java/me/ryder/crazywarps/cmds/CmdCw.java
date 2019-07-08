@@ -1,21 +1,16 @@
 package me.ryder.crazywarps.cmds;
 
 import me.ryder.crazywarps.util.Methods;
-import me.ryder.crazywarps.util.fm.SettingsManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class CmdCw implements CommandExecutor {
 
-    public static SettingsManager settings = SettingsManager.getInstance();
-
     @Override
     public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
-            FileConfiguration msg = settings.getLang();
 
             if (!(p instanceof Player)) {
                // p.sendMessage(Methods.pl(msg.getString("messages.prefix" + " &cYou can only use that command in-game.")));
