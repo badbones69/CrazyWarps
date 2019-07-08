@@ -1,12 +1,6 @@
 package me.ryder.crazywarps;
 
 import me.ryder.crazywarps.cmds.CmdCw;
-import me.ryder.crazywarps.cmds.CmdCwReload;
-import me.ryder.crazywarps.cmds.CmdDelWarp;
-import me.ryder.crazywarps.cmds.CmdSetWarp;
-import me.ryder.crazywarps.cmds.CmdWarpList;
-import me.ryder.crazywarps.cmds.CmdWarpSync;
-import me.ryder.crazywarps.util.Methods;
 import me.ryder.crazywarps.util.fm.SettingsManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,21 +25,21 @@ public final class CrazyWarps extends JavaPlugin {
         m.info("Crazy Warps " + getDescription().getVersion() + " - By Ryder Belserion");
         m.info("");
         m.info("Activating Commands...");
-        this.Commands();
+        registerCommands();
 
         m.info("");
         m.info("Activating Events...");
-        this.Events();
+        registerEvents();
 
         m.info("");
         m.info("-------------------------------");
     }
 
-    private void Commands() {
+    private void registerCommands() {
         this.getCommand("cw").setExecutor(new CmdCw());
        // this.getCommand("cw reload").setExecutor(new CmdCwReload());
     }
-    private void Events() {}
+    private void registerEvents() {}
 
     @Override
     public void onDisable() {
