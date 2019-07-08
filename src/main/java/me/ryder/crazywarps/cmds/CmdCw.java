@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class CmdCw implements CommandExecutor {
+public class CmdCw extends JavaPlugin implements CommandExecutor {
 
     public static SettingsManager settings = SettingsManager.getInstance();
 

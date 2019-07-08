@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class CmdCwReload implements CommandExecutor {
+public class CmdCwReload extends JavaPlugin implements CommandExecutor {
 
     public static SettingsManager settings = SettingsManager.getInstance();
 
