@@ -42,7 +42,7 @@ public final class CrazyWarps extends JavaPlugin {
     }
 
     private void Commands() {
-       // this.getCommand("cw").setExecutor(new CmdCw());
+        this.getCommand("cw").setExecutor(new CmdCw());
        // this.getCommand("cw reload").setExecutor(new CmdCwReload());
     }
     private void Events() {}

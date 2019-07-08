@@ -13,6 +13,7 @@ public class CmdCw extends JavaPlugin implements CommandExecutor {
 
     public static SettingsManager settings = SettingsManager.getInstance();
 
+    @Override
     public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
             FileConfiguration msg = settings.getLang();
 
