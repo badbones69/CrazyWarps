@@ -202,7 +202,7 @@ public class FileManager {
         if(file != null) {
             try {
                 file.getFile().save(new File(plugin.getDataFolder(), file.getHomeFolder() + "/" + file.getFileName()));
-                if(log) System.out.println(prefix + "Successfuly saved the " + file.getFileName() + ".");
+                if(log) System.out.println(prefix + "Successfully saved the " + file.getFileName() + ".");
             }catch(Exception e) {
                 System.out.println(prefix + "Could not save " + file.getFileName() + "!");
                 e.printStackTrace();
@@ -236,7 +236,7 @@ public class FileManager {
         if(file != null) {
             try {
                 file.file = YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(), "/" + file.getHomeFolder() + "/" + file.getFileName()));
-                if(log) System.out.println(prefix + "Successfuly reload the " + file.getFileName() + ".");
+                if(log) System.out.println(prefix + "Successfully reload the " + file.getFileName() + ".");
             }catch(Exception e) {
                 System.out.println(prefix + "Could not reload the " + file.getFileName() + "!");
                 e.printStackTrace();
@@ -281,7 +281,9 @@ public class FileManager {
     public enum Files {
 
         //ENUM_NAME("FileName.yml", "FilePath.yml"),
-        CONFIG("config.yml", "config.yml");
+        CONFIG("config.yml", "config.yml"),
+        LANG("lang.yml", "lang.yml"),
+        DATA("data.yml", "data.yml");
 
         private String fileName;
         private String fileLocation;
@@ -330,7 +332,7 @@ public class FileManager {
         /**
          * Overrides the loaded state file and loads the file systems file.
          */
-        public void relaodFile() {
+        public void reloadFile() {
             getInstance().reloadFile(this);
         }
 
@@ -424,7 +426,7 @@ public class FileManager {
             if(file != null) {
                 try {
                     file.save(new File(plugin.getDataFolder(), homeFolder + "/" + fileName));
-                    if(log) System.out.println(prefix + "Successfuly saved the " + fileName + ".");
+                    if(log) System.out.println(prefix + "Successfully saved the " + fileName + ".");
                     return true;
                 }catch(Exception e) {
                     System.out.println(prefix + "Could not save " + fileName + "!");
@@ -445,7 +447,7 @@ public class FileManager {
             if(file != null) {
                 try {
                     file = YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(), "/" + homeFolder + "/" + fileName));
-                    if(log) System.out.println(prefix + "Successfuly reload the " + fileName + ".");
+                    if(log) System.out.println(prefix + "Successfully reloaded the " + fileName + ".");
                     return true;
                 }catch(Exception e) {
                     System.out.println(prefix + "Could not reload the " + fileName + "!");
