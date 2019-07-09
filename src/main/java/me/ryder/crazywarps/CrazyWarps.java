@@ -1,13 +1,16 @@
 package me.ryder.crazywarps;
 
+import com.google.common.io.Files;
 import me.ryder.crazywarps.cmds.CmdCw;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
+import me.ryder.crazywarps.util.fm.FileManager;
 
 public final class CrazyWarps extends JavaPlugin {
 
     private Logger m;
+    private FileManager fm = FileManager.getInstance();
 
     @SuppressWarnings("deprecation")
     @Override
@@ -27,6 +30,11 @@ public final class CrazyWarps extends JavaPlugin {
         registerEvents();
 
         m.info("");
+        m.info("Loading Files...");
+        registerFiles();
+
+
+        m.info("");
         m.info("-------------------------------");
     }
 
@@ -35,6 +43,14 @@ public final class CrazyWarps extends JavaPlugin {
        // this.getCommand("cw reload").setExecutor(new CmdCwReload());
     }
     private void registerEvents() {}
+
+    private void registerFiles() {
+        fm.logInfo(true)
+        .registerCustomFilesFolder("config.yml")
+        .registerCustomFilesFolder("lang.yml")
+        .registerCustomFilesFolder("data.yml")
+        .setup(this);
+    }
 
     @Override
     public void onDisable() {
