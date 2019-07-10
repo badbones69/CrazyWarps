@@ -24,4 +24,12 @@ public class Methods {
     public static String getPerms() {
         return getPerms("");
     }
+
+    public static String getReload(String string) {
+        return pl(FileManager.Files.LANG.getFile().getString("messages.reload") + string);
+    }
+
+    public static String getReload() {
+        return getReload();
+    }
 }
