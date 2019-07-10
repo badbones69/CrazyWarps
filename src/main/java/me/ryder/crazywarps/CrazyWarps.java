@@ -22,11 +22,11 @@ public final class CrazyWarps extends JavaPlugin {
         m.info("");
         m.info("Crazy Warps " + getDescription().getVersion() + " - By Ryder Belserion");
         m.info("");
-        m.info("Activating Commands...");
+        m.info("Loading Commands...");
         registerCommands();
 
         m.info("");
-        m.info("Activating Events...");
+        m.info("Loading Events...");
         registerEvents();
 
         m.info("");
@@ -41,15 +41,18 @@ public final class CrazyWarps extends JavaPlugin {
     private void registerCommands() {
         this.getCommand("cw").setExecutor(new CmdCw());
        // this.getCommand("cw reload").setExecutor(new CmdCwReload());
+        m.info("All Commands Loaded");
     }
-    private void registerEvents() {}
+    private void registerEvents() {
+        m.info("All Events Loaded");
+    }
 
     private void registerFiles() {
         fm.logInfo(true)
+        .setup(this)
         .registerCustomFilesFolder("config.yml")
         .registerCustomFilesFolder("lang.yml")
-        .registerCustomFilesFolder("data.yml")
-        .setup(this);
+        .registerCustomFilesFolder("data.yml");
     }
 
     @Override
