@@ -10,14 +10,14 @@ public class CmdCwReload implements CommandExecutor {
 
     public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
 
-        if (label.equalsIgnoreCase("cw reload")) {
+        if (label.equalsIgnoreCase("cwr")) {
             if (!p.hasPermission("cw.access")) {
                 p.sendMessage(Methods.getPrefix() + Methods.getPerms());
                 return true;
             }
 
             else {
-                p.sendMessage(Methods.getPrefix() + Methods.getReload());
+                p.sendMessage(Methods.getPrefix() + Methods.getReload(""));
                 FileManager.Files.CONFIG.reloadFile();
                 FileManager.Files.LANG.reloadFile();
                 FileManager.Files.DATA.reloadFile();
