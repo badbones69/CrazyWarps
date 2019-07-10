@@ -1,5 +1,5 @@
 messages:
-  prefix: '&c[&e!7c] &e:'
+  prefix: '&c[&e!&c] '
   config-reload: '&cYou have reloaded the config.yml.'
   no-perms: '&cYou do not have permissions to use this command.'
   no-category-perms: '&cYou do not have permission to see these warps.'
