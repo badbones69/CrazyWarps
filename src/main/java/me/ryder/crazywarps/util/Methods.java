@@ -1,10 +1,27 @@
 package me.ryder.crazywarps.util;
 
 import me.ryder.crazywarps.CrazyWarps;
+import me.ryder.crazywarps.util.fm.FileManager;
 import org.bukkit.ChatColor;
 
 public class Methods {
     public static String pl(String M) {
         return ChatColor.translateAlternateColorCodes('&', M);
+    }
+
+    public static String getPrefix(String string) {
+        return pl(FileManager.Files.LANG.getFile().getString("messages.prefix") + string);
+    }
+
+    public static String getPrefix() {
+        return getPrefix("");
+    }
+
+    public static String getPerms(String string) {
+        return pl(FileManager.Files.LANG.getFile().getString("messages.no-perms") + string);
+    }
+
+    public static String getPerms() {
+        return getPerms("");
     }
 }
