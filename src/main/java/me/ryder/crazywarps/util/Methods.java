@@ -28,4 +28,16 @@ public class Methods {
     public static String getReload(String string) {
         return pl(FileManager.Files.LANG.getFile().getString("messages.no-perms") + string);
     }
+
+    public static String getReload() {
+        return getReload("");
+    }
+
+    public static String getConsole(String string) {
+        return pl(FileManager.Files.LANG.getFile().getString("messages.no-console") + string);
+    }
+
+    public static String getConsole() {
+        return getConsole("");
+    }
 }
