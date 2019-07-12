@@ -10,22 +10,23 @@ public class CmdCwReload implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
         if (args.length == 0) {
-
-            if (p.hasPermission("cw.access")) {
-                p.sendMessage(Methods.getPrefix() + Methods.getPerms());
-                return true;
-            }
-
-            if (!(p instanceof Player)) {
-                p.sendMessage(Methods.pl("&c[&e!&c] This command can only be ran by a player."));
-                return true;
-            }
-
-        } else {
-            if (args[0].equalsIgnoreCase("reload")) {
-                p.sendMessage(Methods.getPrefix() + Methods.getReload());
-            }
+            return true;
         }
+
+        if (!(p instanceof Player)) {
+            p.sendMessage(Methods.getPrefix() + Methods.getConsole());
+            return true;
+        }
+
+        if (!p.hasPermission("cw.access")) {
+            p.sendMessage(Methods.getPrefix() + Methods.getPerms());
+            return true;
+        }
+
+        else if (args[0].equals("reload")) {
+            p.sendMessage(Methods.getPrefix() + Methods.getReload());
+        }
+
         return true;
     }
 }
