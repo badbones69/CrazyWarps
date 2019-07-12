@@ -1,7 +1,6 @@
 package me.ryder.crazywarps;
 
-import me.ryder.crazywarps.cmds.CmdCw;
-import me.ryder.crazywarps.cmds.CmdCwReload;
+import me.ryder.crazywarps.cmds.Commands;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
@@ -39,8 +38,7 @@ public final class CrazyWarps extends JavaPlugin {
     }
 
     private void registerCommands() {
-        getCommand("cw").setExecutor(new CmdCw());
-        getCommand("cw").setExecutor(new CmdCwReload());
+        getCommand("cw").setExecutor(new Commands());
         m.info("All Commands Loaded");
     }
     private void registerEvents() {
