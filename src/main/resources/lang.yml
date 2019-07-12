@@ -1,6 +1,6 @@
 messages:
   prefix: '&c[&e!&c] '
-  config-reload: '&cYou have reloaded the config.yml.'
+  config-reload: '&cYou have reloaded the plugin.'
   no-perms: '&cYou do not have permissions to use this command.'
   no-console: '&cYou must be a player to use this command.'
   no-category-perms: '&cYou do not have permission to see these warps.'
