@@ -2,6 +2,7 @@ package me.ryder.crazywarps.cmds;
 
 import me.ryder.crazywarps.util.Methods;
 import me.ryder.crazywarps.util.fm.FileManager;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -28,12 +29,6 @@ public class Commands implements CommandExecutor {
             p.sendMessage(Methods.pl("&8- &c/cw warpsync &7This will sync Essentials & CMI warps into CrazyWarps."));
             return true;
         } else {
-
-            if (!(p instanceof Player)) {
-                p.sendMessage(Methods.getPrefix() + Methods.getConsole());
-                return true;
-            }
-
             if (args[0].equalsIgnoreCase("reload")) {
                 if (!Methods.hasPermission(p, "reload", true)) {
                     return true;
@@ -44,6 +39,29 @@ public class Commands implements CommandExecutor {
                 p.sendMessage(Methods.getPrefix() + Methods.getReload());
                 return true;
             }
+
+            if (args[0].equalsIgnoreCase("setwarp")) {
+                final Player target = (Player) p;
+                Location loc = target.getLocation();
+                String world = loc.getWorld().getName();
+                int X = loc.getBlockX();
+                int Y= loc.getBlockY();
+                int Z = loc.getBlockZ();
+                float pitch = loc.getPitch();
+                float yaw = loc.getYaw();
+
+                if (!(p instanceof Player)) {
+                    p.sendMessage(Methods.getPrefix() + Methods.getConsole());
+                    return true;
+                }
+                if (!Methods.hasPermission(p, "setwarp", true)) {
+                    return true;
+                }
+                if (args.length == 1 || args.length == 0) {
+                    p.sendMessage(Methods.getPrefix() + "&cPlease do /setwarp <category> <warp name>");
+                }
+            }
+
         }
         return false;
     }
