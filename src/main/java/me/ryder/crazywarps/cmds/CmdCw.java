@@ -24,6 +24,7 @@ public class CmdCw implements CommandExecutor {
         }
         else if (args[0].equals("help")) {
             p.sendMessage(Methods.pl(Methods.getPrefix() + "&cThis shows a list of all available commands."));
+            p.sendMessage("");
             p.sendMessage(Methods.pl("&8- &c/cw reload &7This will reload the plugin."));
             p.sendMessage(Methods.pl("&8- &c/cw delwarp <warp name> &7This will delete a warp."));
             p.sendMessage(Methods.pl("&8- &c/cw setwarp <warp name> &7This will set a warp."));
