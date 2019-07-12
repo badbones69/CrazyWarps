@@ -1,6 +1,5 @@
 package me.ryder.crazywarps.util;
 
-import me.ryder.crazywarps.CrazyWarps;
 import me.ryder.crazywarps.util.fm.FileManager;
 import org.bukkit.ChatColor;
 
