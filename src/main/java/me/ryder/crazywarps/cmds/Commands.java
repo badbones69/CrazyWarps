@@ -1,6 +1,7 @@
 package me.ryder.crazywarps.cmds;
 
 import me.ryder.crazywarps.util.Methods;
+import me.ryder.crazywarps.util.fm.FileManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -37,6 +38,9 @@ public class Commands implements CommandExecutor {
                 if (!Methods.hasPermission(p, "reload", true)) {
                     return true;
                 }
+                FileManager.Files.LANG.reloadFile();
+                FileManager.Files.CONFIG.reloadFile();
+                FileManager.Files.DATA.reloadFile();
                 p.sendMessage(Methods.getPrefix() + Methods.getReload());
                 return true;
             }
