@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 public class Commands implements CommandExecutor {
 
     @Override
-    public boolean onCommand(CommandSender p, Command cmd, String commandLable, String[] args) {
+    public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
         if (args.length == 0) {
             if (!(p instanceof Player)) {
                 p.sendMessage(Methods.getPrefix() + Methods.getConsole());
