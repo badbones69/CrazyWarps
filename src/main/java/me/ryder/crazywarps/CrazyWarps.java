@@ -1,10 +1,11 @@
 package me.ryder.crazywarps;
 
 import me.ryder.crazywarps.cmds.Commands;
+import me.ryder.crazywarps.util.fm.FileManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
-import me.ryder.crazywarps.util.fm.FileManager;
+import me.ryder.crazywarps.util.fm.FileManager.Files;
 
 public final class CrazyWarps extends JavaPlugin {
 
