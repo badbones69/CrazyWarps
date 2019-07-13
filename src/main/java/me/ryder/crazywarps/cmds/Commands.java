@@ -44,9 +44,6 @@ public class Commands implements CommandExecutor {
             final Player target = (Player) p;
             Location loc = target.getLocation();
             String world = loc.getWorld().getName();
-            int X = loc.getBlockX();
-            int Y = loc.getBlockY();
-            int Z = loc.getBlockZ();
             String cat = args[1];
             String warp = args[2];
             FileConfiguration data = Files.DATA.getFile();
