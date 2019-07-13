@@ -61,7 +61,7 @@ public class Commands implements CommandExecutor {
             }
             if (args.length == 3) {
                 data.set("categories." + cat + "." + warp + ".world", world);
-                data.set("categories." + cat + "." + warp + ".X",loc.getBlockX());
+                data.set("categories." + cat + "." + warp + ".X", loc.getBlockX());
                 data.set("categories." + cat + "." + warp + ".Z", loc.getBlockZ());
                 data.set("categories." + cat + "." + warp + ".Y", loc.getBlockY());
                 data.set("categories." + cat + "." + warp + ".Pitch", loc.getPitch());
