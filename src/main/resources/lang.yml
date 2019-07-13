@@ -7,6 +7,8 @@ messages:
   warp-message: '&cYou are teleporting to &e%warp% &cin &e%delay% &cseconds.'
   warp-cancel: '&cTeleportation was interrupted because you took damage or moved.'
   warp-list: '&cThis lists all warps and categories.'
+  set-warp: '&cPlease do /cw setwarp <category> <warp>'
+  warp-set: '&cYou have successfully set a warp.'
   warp-list-format: '%category% &7[%warp%&7]'
   category-lore-deny: '&c&lLOCKED'
   category-lore-allow: '&a&lUNLOCKED'
