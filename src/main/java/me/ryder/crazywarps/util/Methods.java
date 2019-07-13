@@ -1,6 +1,6 @@
 package me.ryder.crazywarps.util;
 
-import me.ryder.crazywarps.util.fm.FileManager;
+import me.ryder.crazywarps.util.fm.FileManager.Files;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -11,7 +11,7 @@ public class Methods {
     }
 
     public static String getPrefix(String string) {
-        return pl(FileManager.Files.LANG.getFile().getString("messages.prefix") + string);
+        return pl(Files.LANG.getFile().getString("messages.prefix") + string);
     }
 
     public static String getPrefix() {
@@ -19,7 +19,7 @@ public class Methods {
     }
 
     public static String getPerms(String string) {
-        return pl(FileManager.Files.LANG.getFile().getString("messages.no-perms") + string);
+        return pl(Files.LANG.getFile().getString("messages.no-perms") + string);
     }
 
     public static String getPerms() {
@@ -27,7 +27,7 @@ public class Methods {
     }
 
     public static String getReload(String string) {
-        return pl(FileManager.Files.LANG.getFile().getString("messages.config-reload") + string);
+        return pl(Files.LANG.getFile().getString("messages.config-reload") + string);
     }
 
     public static String getReload() {
@@ -35,11 +35,26 @@ public class Methods {
     }
 
     public static String getConsole(String string) {
-        return pl(FileManager.Files.LANG.getFile().getString("messages.no-console") + string);
+        return pl(Files.LANG.getFile().getString("messages.no-console") + string);
     }
 
     public static String getConsole() {
         return getConsole("");
+    }
+
+    public static String getWarp(String string) {
+        return pl(Files.LANG.getFile().get("messages.set-warp") + string);
+    }
+
+    public static String getWarp() {
+        return getWarp("");
+    }
+
+    public static String setWarp(String string) {
+        return pl(Files.LANG.getFile().get("messages.warp-set") + string);
+    }
+    public static String setWarp() {
+        return setWarp("");
     }
 
     public static boolean hasPermission(CommandSender p, String perm, Boolean toggle) {
