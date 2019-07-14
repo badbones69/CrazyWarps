@@ -134,12 +134,12 @@ public enum Messages {
         FileConfiguration messages = Files.LANG.getFile();
         boolean saveFile = false;
         for(Messages message : values()) {
-            if(!messages.contains("Messages." + message.getPath())) {
+            if(!messages.contains("messages." + message.getPath())) {
                 saveFile = true;
                 if(message.getDefaultMessage() != null) {
-                    messages.set("Messages." + message.getPath(), message.getDefaultMessage());
+                    messages.set("messages." + message.getPath(), message.getDefaultMessage());
                 }else {
-                    messages.set("Messages." + message.getPath(), message.getDefaultListMessage());
+                    messages.set("messages." + message.getPath(), message.getDefaultListMessage());
                 }
             }
         }
