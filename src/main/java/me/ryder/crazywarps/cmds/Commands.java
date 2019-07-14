@@ -101,11 +101,15 @@ public class Commands implements CommandExecutor {
 				if(data.contains("categories." + category)) {
 					if(data.contains("categories." + category + "." + warp)) {
 						if(args.length == 3) {
-                    data.set("categories." + category + "." + warp, null);
-                    Files.DATA.saveFile();
-                    p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
-                    return true;
-                }
+							data.set("categories." + category + "." + warp, null);
+							//Deletes the category if empty
+							if(data.getConfigurationSection("categories." + category).getKeys(false).isEmpty()){
+								data.set("categories." + category, null);
+							}
+							Files.DATA.saveFile();
+							p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
+							return true;
+						}
 					}else{
 						p.sendMessage(Methods.getPrefix() + Methods.warpNotFound().replace("%warp%", warp).replace("%category%", category));
 					}
