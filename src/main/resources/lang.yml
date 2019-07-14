@@ -10,6 +10,8 @@ messages:
   created-warp: '&cYou have successfully created a new warp.'
   delete-warp: '&cPlease type /cw delwarp <category> <warp>'
   deleted-warp: '&cYou have successfully deleted the warp.'
+  not-a-warp: '&cThe warp &e%warp% &cin category &e%category% &cdoesn''t exist.'
+  not-a-category: '&cThe category &e%category% &cdoesn''t exist.'
   warp-list-format: '%category% &7[%warp%&7]'
   category-lore-deny: '&c&lLOCKED'
   category-lore-allow: '&a&lUNLOCKED'

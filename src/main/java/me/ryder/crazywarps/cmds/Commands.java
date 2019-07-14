@@ -98,14 +98,20 @@ public class Commands implements CommandExecutor {
                 String category = args[1];
                 String warp = args[2];
                 FileConfiguration data = Files.DATA.getFile();
-
-                if (args.length == 2) {
+				if(data.contains("categories." + category)) {
+					if(data.contains("categories." + category + "." + warp)) {
 						if(args.length == 3) {
                     data.set("categories." + category + "." + warp, null);
                     Files.DATA.saveFile();
                     p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
                     return true;
                 }
+					}else{
+						p.sendMessage(Methods.getPrefix() + Methods.warpNotFound().replace("%warp%", warp).replace("%category%", category));
+					}
+				}else{
+					p.sendMessage(Methods.getPrefix() + Methods.categoryNotFound().replace("%category%", category));
+				}
 
             }
         }

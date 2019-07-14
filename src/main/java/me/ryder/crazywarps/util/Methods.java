@@ -74,6 +74,22 @@ public class Methods {
     public static String deletedWarp() {
         return warp4("");
     }
+    
+    public static String warpNotFound() {
+        return warpNotFound("");
+    }
+    
+    public static String warpNotFound(String string) {
+        return pl(Files.LANG.getFile().getString("messages.not-a-warp") + string);
+    }
+    
+    public static String categoryNotFound() {
+        return categoryNotFound("");
+    }
+    
+    public static String categoryNotFound(String string) {
+        return pl(Files.LANG.getFile().getString("messages.not-a-category") + string);
+    }
     // Permission Checker
     public static boolean hasPermission(CommandSender p, String perm, Boolean toggle) {
         if (p instanceof Player) {
