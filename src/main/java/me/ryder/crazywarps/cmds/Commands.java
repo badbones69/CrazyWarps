@@ -25,7 +25,7 @@ public class Commands implements CommandExecutor {
             p.sendMessage(Methods.pl(Methods.getPrefix() + "&cThis shows a list of all available commands."));
             p.sendMessage("");
             p.sendMessage(Methods.pl("&8- &c/cw reload &7This will reload the plugin."));
-            p.sendMessage(Methods.pl("&8- &c/cw delwarp <warp name> &7This will delete a warp."));
+            p.sendMessage(Methods.pl("&8- &c/cw delwarp <category> <warp name> &7This will delete a warp."));
             p.sendMessage(Methods.pl("&8- &c/cw setwarp <category> <warp name> &7This will set a warp."));
             p.sendMessage(Methods.pl("&8- &c/cw warplist &7This will list all warps and categories."));
             p.sendMessage(Methods.pl("&8- &c/cw warpsync &7This will sync Essentials & CMI warps into CrazyWarps."));
