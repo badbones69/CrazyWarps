@@ -10,8 +10,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class Commands implements CommandExecutor {
+
     @Override
     public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
+        // cw - base command
         if (args.length == 0) {
             if (!(p instanceof Player)) {
                 p.sendMessage(Methods.getPrefix() + Methods.noConsole());
@@ -29,6 +31,7 @@ public class Commands implements CommandExecutor {
             p.sendMessage(Methods.pl("&8- &c/cw warpsync &7This will sync Essentials & CMI warps into CrazyWarps."));
             return true;
         } else {
+            // /cw reload
             if (args[0].equalsIgnoreCase("reload")) {
                 if (!Methods.hasPermission(p, "reload", true)) {
                     return true;
@@ -39,6 +42,7 @@ public class Commands implements CommandExecutor {
                 p.sendMessage(Methods.getPrefix() + Methods.getReload());
                 return true;
             }
+            // /cw setwarp <category> <warp>
             if (args[0].equalsIgnoreCase("setwarp")) {
 
                 if(!(p instanceof Player)) {
@@ -51,16 +55,16 @@ public class Commands implements CommandExecutor {
                     return true;
                 }
 
+                if (!Methods.hasPermission(p, "setwarp", true)) {
+                    return true;
+                }
+
                 final Player target = (Player) p;
                 Location loc = target.getLocation();
                 String world = loc.getWorld().getName();
                 String cat = args[1];
                 String warp = args[2];
                 FileConfiguration data = Files.DATA.getFile();
-
-                if (!Methods.hasPermission(p, "setwarp", true)) {
-                    return true;
-                }
 
                 if (args.length == 3) {
                     data.set("categories." + cat + "." + warp + ".world", world);
@@ -74,7 +78,7 @@ public class Commands implements CommandExecutor {
                     return true;
                 }
             }
-
+            // /cw delwarp <warp>
             if (args[0].equalsIgnoreCase("delwarp")) {
 
                 if (!(p instanceof Player)) {
@@ -82,12 +86,12 @@ public class Commands implements CommandExecutor {
                     return true;
                 }
 
-                if (!Methods.hasPermission(p, "delwarp", true)) {
+                if(args.length <= 1) {
+                    p.sendMessage(Methods.getPrefix() + Methods.deleteWarp());
                     return true;
                 }
 
-                if(args.length <= 1) {
-                    p.sendMessage(Methods.getPrefix() + Methods.deleteWarp());
+                if (!Methods.hasPermission(p, "delwarp", true)) {
                     return true;
                 }
 
@@ -97,8 +101,8 @@ public class Commands implements CommandExecutor {
 
                 if (args.length == 2) {
                     data.set("categories." + category + "." + warp, null);
-                    p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
                     Files.DATA.saveFile();
+                    p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
                     return true;
                 }
 
