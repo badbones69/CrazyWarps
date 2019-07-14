@@ -1,15 +1,10 @@
 package me.ryder.crazywarps;
 
 import me.ryder.crazywarps.cmds.Commands;
-import me.ryder.crazywarps.util.Methods;
 import me.ryder.crazywarps.util.fm.FileManager;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import java.util.logging.Logger;
-import me.ryder.crazywarps.util.fm.FileManager.Files;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public final class CrazyWarps extends JavaPlugin {
 
@@ -51,11 +46,7 @@ public final class CrazyWarps extends JavaPlugin {
     }
 
     private void registerFiles() {
-        fm.logInfo(true)
-        .setup(this)
-        .registerCustomFilesFolder("config.yml")
-        .registerCustomFilesFolder("lang.yml")
-        .registerCustomFilesFolder("data.yml");
+        fm.logInfo(true).setup(this);
     }
 
     @Override

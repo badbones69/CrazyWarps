@@ -25,7 +25,7 @@ public class Commands implements CommandExecutor {
             p.sendMessage(Methods.pl(Methods.getPrefix() + "&cThis shows a list of all available commands."));
             p.sendMessage("");
             p.sendMessage(Methods.pl("&8- &c/cw reload &7This will reload the plugin."));
-            p.sendMessage(Methods.pl("&8- &c/cw delwarp <warp name> &7This will delete a warp."));
+            p.sendMessage(Methods.pl("&8- &c/cw delwarp <category> <warp name> &7This will delete a warp."));
             p.sendMessage(Methods.pl("&8- &c/cw setwarp <category> <warp name> &7This will set a warp."));
             p.sendMessage(Methods.pl("&8- &c/cw warplist &7This will list all warps and categories."));
             p.sendMessage(Methods.pl("&8- &c/cw warpsync &7This will sync Essentials & CMI warps into CrazyWarps."));
@@ -86,7 +86,7 @@ public class Commands implements CommandExecutor {
                     return true;
                 }
 
-                if(args.length <= 1) {
+                if(args.length <= 2) {
                     p.sendMessage(Methods.getPrefix() + Methods.deleteWarp());
                     return true;
                 }
@@ -98,13 +98,24 @@ public class Commands implements CommandExecutor {
                 String category = args[1];
                 String warp = args[2];
                 FileConfiguration data = Files.DATA.getFile();
-
-                if (args.length == 2) {
-                    data.set("categories." + category + "." + warp, null);
-                    Files.DATA.saveFile();
-                    p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
-                    return true;
-                }
+				if(data.contains("categories." + category)) {
+					if(data.contains("categories." + category + "." + warp)) {
+						if(args.length == 3) {
+							data.set("categories." + category + "." + warp, null);
+							//Deletes the category if empty
+							if(data.getConfigurationSection("categories." + category).getKeys(false).isEmpty()){
+								data.set("categories." + category, null);
+							}
+							Files.DATA.saveFile();
+							p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
+							return true;
+						}
+					}else{
+						p.sendMessage(Methods.getPrefix() + Methods.warpNotFound().replace("%warp%", warp).replace("%category%", category));
+					}
+				}else{
+					p.sendMessage(Methods.getPrefix() + Methods.categoryNotFound().replace("%category%", category));
+				}
 
             }
         }
