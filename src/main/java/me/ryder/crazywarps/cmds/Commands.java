@@ -42,21 +42,18 @@ public class Commands implements CommandExecutor {
                 return true;
             }
             if (args[0].equalsIgnoreCase("setwarp")) {
-
                 if(!(p instanceof Player)) {
                    p.sendMessage(Messages.PLAYER_ONLY.getMessage());
                     return true;
                 }
-
                 if(args.length <= 2) {
                     p.sendMessage(Methods.getPrefix() + Methods.pl("Please type /setwarp <category> <warp name>"));
                     return true;
                 }
-
                 if (!Methods.hasPermission(p, "setwarp", true)) {
                     return true;
                 }
-
+                // Separator
                 final Player target = (Player) p;
                 Location loc = target.getLocation();
                 String world = loc.getWorld().getName();
@@ -78,21 +75,18 @@ public class Commands implements CommandExecutor {
             }
             // /cw delwarp <warp>
             if (args[0].equalsIgnoreCase("delwarp")) {
-
                 if (!(p instanceof Player)) {
                     p.sendMessage(Messages.PLAYER_ONLY.getMessage());
                     return true;
                 }
-
                 if(args.length <= 2) {
                     p.sendMessage(Methods.getPrefix() + Methods.pl("Please type /delwarp <category> <warp name>"));
                     return true;
                 }
-
                 if (!Methods.hasPermission(p, "delwarp", true)) {
                     return true;
                 }
-
+                // Separator
                 String category = args[1];
                 String warp = args[2];
                 FileConfiguration data = Files.DATA.getFile();
@@ -101,7 +95,7 @@ public class Commands implements CommandExecutor {
 					if(data.contains("categories." + category + "." + warp)) {
 						if(args.length == 3) {
 							data.set("categories." + category + "." + warp, null);
-							//Deletes the category if empty
+							// Deletes the category if empty
 							if(data.getConfigurationSection("categories." + category).getKeys(false).isEmpty()){
 								data.set("categories." + category, null);
 							}
@@ -117,6 +111,19 @@ public class Commands implements CommandExecutor {
 				}
 
             }
+            if (args[0].equalsIgnoreCase("warp")) {
+                if (!(p instanceof Player)) {
+                    p.sendMessage(Messages.PLAYER_ONLY.getMessage());
+                    return true;
+                }
+                if (!Methods.hasPermission(p, "warp", true));
+                return true;
+                }
+             //   if (args.length <= 2) {
+             //       p.sendMessage(Methods.getPrefix() + Methods.pl("Please type /warp <warp name>"));
+             //       return true;
+             //   }
+             // Separator
         }
         return true;
     }
