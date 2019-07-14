@@ -43,36 +43,36 @@ public class Methods {
         return getConsole("");
     }
     // Sent if they didn't use all the arguments in the command.
-    public static String warp1(String string) {
+    public static String createWarp(String string) {
         return pl(Files.LANG.getFile().getString("messages.create-warp") + string);
     }
 
     public static String createWarp() {
-        return warp1("");
+        return createWarp("");
     }
     // Sent only if they created a warp successfully.
-    public static String warp2(String string) {
+    public static String createdWarp(String string) {
         return pl(Files.LANG.getFile().getString("messages.created-warp") + string);
     }
 
     public static String createdWarp() {
-        return warp2("");
+        return createdWarp("");
     }
     // Sent if they didn't use all the arguments in the command.
-    public static String warp3(String string) {
+    public static String deleteWarp(String string) {
         return pl(Files.LANG.getFile().getString("messages.delete-warp") + string);
     }
 
     public static String deleteWarp() {
-        return warp3("");
+        return deleteWarp("");
     }
     // Sent only if they deleted a warp successfully.
-    public static String warp4(String string) {
+    public static String deletedWarp(String string) {
         return pl(Files.LANG.getFile().getString("messages.deleted-warp") + string);
     }
 
     public static String deletedWarp() {
-        return warp4("");
+        return deletedWarp("");
     }
     
     public static String warpNotFound() {
