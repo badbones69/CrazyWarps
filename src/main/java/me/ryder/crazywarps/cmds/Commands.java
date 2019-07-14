@@ -1,6 +1,7 @@
 package me.ryder.crazywarps.cmds;
 
 import me.ryder.crazywarps.util.Methods;
+import me.ryder.crazywarps.util.Messages;
 import me.ryder.crazywarps.util.fm.FileManager.Files;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -13,10 +14,9 @@ public class Commands implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
-        // cw - base command
         if (args.length == 0) {
             if (!(p instanceof Player)) {
-                p.sendMessage(Methods.getPrefix() + Methods.noConsole());
+                p.sendMessage(Messages.PLAYER_ONLY.getMessage());
                 return true;
             }
             if (!Methods.hasPermission(p, "info", true)) {
@@ -31,7 +31,6 @@ public class Commands implements CommandExecutor {
             p.sendMessage(Methods.pl("&8- &c/cw warpsync &7This will sync Essentials & CMI warps into CrazyWarps."));
             return true;
         } else {
-            // /cw reload
             if (args[0].equalsIgnoreCase("reload")) {
                 if (!Methods.hasPermission(p, "reload", true)) {
                     return true;
@@ -39,19 +38,18 @@ public class Commands implements CommandExecutor {
                 Files.LANG.reloadFile();
                 Files.CONFIG.reloadFile();
                 Files.DATA.reloadFile();
-                p.sendMessage(Methods.getPrefix() + Methods.getReload());
+                p.sendMessage(Messages.CONFIG_RELOAD.getMessage());
                 return true;
             }
-            // /cw setwarp <category> <warp>
             if (args[0].equalsIgnoreCase("setwarp")) {
 
                 if(!(p instanceof Player)) {
-                    p.sendMessage(Methods.getPrefix() + Methods.noConsole());
+                   p.sendMessage(Messages.PLAYER_ONLY.getMessage());
                     return true;
                 }
 
                 if(args.length <= 2) {
-                    p.sendMessage(Methods.getPrefix() + Methods.createWarp());
+                    p.sendMessage(Methods.getPrefix() + Methods.pl("Please type /setwarp <category> <warp name>"));
                     return true;
                 }
 
@@ -74,7 +72,7 @@ public class Commands implements CommandExecutor {
                     data.set("categories." + cat + "." + warp + ".Pitch", loc.getPitch());
                     data.set("categories." + cat + "." + warp + ".Yaw", loc.getYaw());
                     Files.DATA.saveFile();
-                    p.sendMessage(Methods.getPrefix() + Methods.createdWarp());
+                    p.sendMessage(Messages.NEW_WARP.getMessage());
                     return true;
                 }
             }
@@ -82,12 +80,12 @@ public class Commands implements CommandExecutor {
             if (args[0].equalsIgnoreCase("delwarp")) {
 
                 if (!(p instanceof Player)) {
-                    p.sendMessage(Methods.getPrefix() + Methods.noConsole());
+                    p.sendMessage(Messages.PLAYER_ONLY.getMessage());
                     return true;
                 }
 
                 if(args.length <= 2) {
-                    p.sendMessage(Methods.getPrefix() + Methods.deleteWarp());
+                    p.sendMessage(Methods.getPrefix() + Methods.pl("Please type /delwarp <category> <warp name>"));
                     return true;
                 }
 
@@ -98,6 +96,7 @@ public class Commands implements CommandExecutor {
                 String category = args[1];
                 String warp = args[2];
                 FileConfiguration data = Files.DATA.getFile();
+
 				if(data.contains("categories." + category)) {
 					if(data.contains("categories." + category + "." + warp)) {
 						if(args.length == 3) {
@@ -107,14 +106,14 @@ public class Commands implements CommandExecutor {
 								data.set("categories." + category, null);
 							}
 							Files.DATA.saveFile();
-							p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
+							p.sendMessage(Messages.DELETE_WARP.getMessage());
 							return true;
 						}
-					}else{
-						p.sendMessage(Methods.getPrefix() + Methods.warpNotFound().replace("%warp%", warp).replace("%category%", category));
+					} else{
+					    p.sendMessage(Messages.NOT_A_WARP.getMessage().replace("%warp%", warp).replace("%category%", category));
 					}
-				}else{
-					p.sendMessage(Methods.getPrefix() + Methods.categoryNotFound().replace("%category%", category));
+				} else{
+					 p.sendMessage(Messages.NOT_A_CATEGORY.getMessage().replace("%category%", category));
 				}
 
             }
