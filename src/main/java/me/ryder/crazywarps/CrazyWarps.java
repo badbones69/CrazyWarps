@@ -46,11 +46,7 @@ public final class CrazyWarps extends JavaPlugin {
     }
 
     private void registerFiles() {
-        fm.logInfo(true)
-        .setup(this)
-        .registerCustomFilesFolder("config.yml")
-        .registerCustomFilesFolder("lang.yml")
-        .registerCustomFilesFolder("data.yml");
+        fm.logInfo(true).setup(this);
     }
 
     @Override
