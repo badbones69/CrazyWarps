@@ -131,9 +131,7 @@ public class FileManager {
      * @param homeFolder The folder with custom files in it.
      */
     public FileManager unregisterCustomFilesFolder(String homeFolder) {
-        if(homeFolders.contains(homeFolder)) {
-            homeFolders.remove(homeFolder);
-        }
+        homeFolders.remove(homeFolder);
         return this;
     }
 
@@ -152,9 +150,7 @@ public class FileManager {
      * @param fileName The file that you want to remove from auto-generating.
      */
     public FileManager unregisterDefaultGenerateFiles(String fileName) {
-        if(autoGenerateFiles.containsKey(fileName)) {
-            autoGenerateFiles.remove(fileName);
-        }
+        autoGenerateFiles.remove(fileName);
         return this;
     }
 
@@ -258,22 +254,15 @@ public class FileManager {
      * Was found here: https://bukkit.org/threads/extracting-file-from-jar.16962
      */
     private void copyFile(InputStream in, File out) throws Exception {
-        InputStream fis = in;
-        FileOutputStream fos = new FileOutputStream(out);
-        try {
+        try(FileOutputStream fos = new FileOutputStream(out)) {
             byte[] buf = new byte[1024];
-            int i = 0;
-            while((i = fis.read(buf)) != -1) {
+            int i;
+            while((i = in.read(buf)) != -1) {
                 fos.write(buf, 0, i);
             }
-        }catch(Exception e) {
-            throw e;
         }finally {
-            if(fis != null) {
-                fis.close();
-            }
-            if(fos != null) {
-                fos.close();
+            if(in != null) {
+                in.close();
             }
         }
     }
