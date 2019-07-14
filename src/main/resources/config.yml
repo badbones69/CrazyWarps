@@ -1,4 +1,5 @@
   settings:
-    per-warp-perms: true
-    per-cat-perms: true
+    per-warp-perms: false
+    per-cat-perms: false
+    disable-gui: false
     teleport-delay: 5
