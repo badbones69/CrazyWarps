@@ -109,10 +109,10 @@ public class Commands implements CommandExecutor {
 							p.sendMessage(Messages.DELETE_WARP.getMessage());
 							return true;
 						}
-					} else{
+					} else {
 					    p.sendMessage(Messages.NOT_A_WARP.getMessage().replace("%warp%", warp).replace("%category%", category));
 					}
-				} else{
+				} else {
 					 p.sendMessage(Messages.NOT_A_CATEGORY.getMessage().replace("%category%", category));
 				}
 
