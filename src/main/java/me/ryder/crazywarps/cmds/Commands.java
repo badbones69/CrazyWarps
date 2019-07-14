@@ -86,7 +86,7 @@ public class Commands implements CommandExecutor {
                     return true;
                 }
 
-                if(args.length <= 1) {
+                if(args.length <= 2) {
                     p.sendMessage(Methods.getPrefix() + Methods.deleteWarp());
                     return true;
                 }
@@ -100,6 +100,7 @@ public class Commands implements CommandExecutor {
                 FileConfiguration data = Files.DATA.getFile();
 
                 if (args.length == 2) {
+						if(args.length == 3) {
                     data.set("categories." + category + "." + warp, null);
                     Files.DATA.saveFile();
                     p.sendMessage(Methods.getPrefix() + Methods.deletedWarp());
