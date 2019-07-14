@@ -64,14 +64,7 @@ public final class CrazyWarps extends JavaPlugin {
         m.info("");
         m.info("Crazy Warps " + getDescription().getVersion() + " shutting down.");
         m.info("");
-        m.info("Saving Files...");
-        saveFiles();
         m.info("-------------------------------");
-    }
-    private void saveFiles() {
-        Files.CONFIG.saveFile();
-        Files.DATA.saveFile();
-        Files.LANG.saveFile();
     }
 /*
     @EventHandler
